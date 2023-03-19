@@ -1,0 +1,30 @@
+CREATE TABLE Wyatts_Grocery_Store (id INTEGER PRIMARY KEY, name TEXT, "item type" TEXT, quantity INTEGER, price INTEGER, "popularity (1-10)" INTEGER);
+
+INSERT into Wyatts_Grocery_Store VALUES (1, "apples", "fruit", 44 , 1, 10);
+INSERT into Wyatts_Grocery_Store VALUES (2, "granola", "nuts", 18, 3, 6);
+INSERT into Wyatts_Grocery_Store VALUES (3, "banana", "fruit", 36, 2, 8);
+INSERT into Wyatts_Grocery_Store VALUES (4, "orange", "fruit", 34, 1, 7);
+INSERT into Wyatts_Grocery_Store VALUES (5, "turkey", "meat", 12, 11, 10);
+INSERT into Wyatts_Grocery_Store VALUES (6, "chicken", "meat", 14, 9, 10);
+INSERT into Wyatts_Grocery_Store VALUES (7, "potatoes", "vegetable", 17, 2, 5);
+INSERT into Wyatts_Grocery_Store VALUES (8, "kale", "vegetable", 10, 4, 3);
+INSERT into Wyatts_Grocery_Store VALUES (9, "carrots", "vegetable", 39, 1, 7);
+INSERT into Wyatts_Grocery_Store VALUES (10, "apple juice", "beverage", 12, 6, 9);
+INSERT into Wyatts_Grocery_Store VALUES (11, "orange juice", "beverage", 4, 7, 9);
+INSERT into Wyatts_Grocery_Store VALUES (12, "cranberry juice", "beverage", 13, 8, 2);
+
+SELECT * FROM Wyatts_Grocery_Store;
+
+--display the database ordered by price. 
+select * from Wyatts_Grocery_Store order by price asc;
+
+--what is the avg price of items in the vegetable section? 
+SELECT AVG(price) "avg vegetable item price"
+FROM Wyatts_Grocery_Store
+where "item type"='vegetable'; 
+
+--what are the most 5 popular items? 
+SELECT name, price, "popularity (1-10)"
+FROM Wyatts_Grocery_Store
+order by "popularity (1-10)" desc
+limit 5; 
